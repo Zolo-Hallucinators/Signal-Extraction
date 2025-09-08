@@ -20,3 +20,6 @@
 2. Fetch latest changes: `git pull origin main`
 3. Create and switch to that branch: `git checkout -b <branch-name>`
 4. Just switch to that branch: `git checkout <branch-name>`
+
+### Pushing in new branch:
+1. Make sure to change upstream, so that you can use `git push` directly: `git push -u origin <branch-name>`.
