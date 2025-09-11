@@ -15,22 +15,22 @@
 ### Deacivating the environment:
 1. For both Mac & Windows: `deactivate`
 
-### Re-Activating the environment:
+### [IMP] Re-Activating the environment:
 1. Open Terminal
 2. Switch to src: `cd src`
 3. Activate the virtual environment:
-    - Windows: `env\Scripts\activate.bat` or `env\Scripts\activate` (only this worked)
+    - Windows: ~~`env\Scripts\activate.bat`~~ or `env\Scripts\activate` (only this worked)
     - Mac: `source env/bin/activate`
     - Once you hit enter you will see the next command prefixing with the environment name `env`
 
 ### To check existing packages:
 1. Perform `pip list`
 
-### To freeze installed dependences:
+### [IMP] To freeze installed dependences:
 1. Switch to root directory: `cd ..`
-2. Perform `pip freeze > requirements.txt`, this will update our main `requirements.txt`. Recommended when you have come accross a new package so that everyone can install in their own `env` as well.
+2. Perform `pip freeze > requirements.txt`, this will update our main `requirements.txt`. (Recommended when you have come accross a new package so that everyone can install in their own `env` as well)
 
-### To install from requirements.txt
+### [IMP] To install from requirements.txt
 1. Create & active your `env` as mentioned above
 2. Run `pip install -r requirements.txt`
     - `-r` means install from a file.
@@ -39,5 +39,9 @@
 - Just right click and delete
 - or `rm -r env`
 
-### Video covering above notes:
+### [IMP] To completely uninstall & re-install:
+- Perform: `pip freeze | xargs pip uninstall -y` [Worked only in Git Bash]-> to freeze and uninstall frozen items.
+- Reinstall: `pip install -r requirements.txt`
+
+### References used:
 - Link: https://www.youtube.com/watch?v=Y21OR1OPC9A.
