@@ -1,0 +1,29 @@
+{
+  "runs": [
+    {
+      "run_name": "PalantirTestRun",
+      "q": "palantir",
+      "from_days_ago": 10,
+      "endpoint": "https://newsapi.org/v2/everything",
+      "language": "en",
+      "sortBy": "publishedAt",
+      "page": "<CODE>",
+      "searchIn": "<CODE>"
+    },
+    {
+      "run_name": "PalantirHistorical",
+      "keywords": ["palantir"],
+      "from_days_ago": 300
+    }
+  ],
+  "news_api_key": "c494f280427646c78473013990b3cd45",
+  "snowflake": {
+    "account" : "IDSXPIX-EFC09162",
+    "user" : "ARAVINDSURESH",
+    "password" : "XXXXXXXXXXXXXXXXXX",
+    "role" : "ACCOUNTADMIN",
+    "warehouse" : "COMPUTE_WH",
+    "database" : "SIGNAL_EXTRACTION_DB",
+    "schema" : "<CODE>"
+  }
+}
