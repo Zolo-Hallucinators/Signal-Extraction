@@ -1,0 +1,13 @@
+
+TODO:
+- News Ingestion: Entity mapping, running queries related to the ticker catefory and related domains to get more idea.
+- Ingestion: use Snowflake Stream and implement Change Data Capture.
+
+CANDO:
+- Add entity in the news api before your start syncing it.
+
+ERROR:
+- News Ingestion: (1)no. of domains per rule hitting limit and (2)also caching issue - have to re-run
+
+BottleNecks:
+- News Ingestion: free news api only allows upto a month old of articles i.e 30, but we need 1825 or 5 years of data to get some insights.
