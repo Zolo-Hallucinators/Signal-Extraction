@@ -1,0 +1,25 @@
+-- Setting Up: SIGNAL_EXTRACTION_DB.RAW.NEWS_ARTICLES
+USE DATABASE SIGNAL_EXTRACTION_DB;
+USE SCHEMA RAW; 
+
+CREATE TABLE IF NOT EXISTS SIGNAL_EXTRACTION_DB.RAW.NEWS_ARTICLES (
+    entity_name STRING,
+    article_id STRING PRIMARY KEY, -- deterministic hash key
+    author STRING,
+    title STRING,
+    description STRING,
+    url STRING,
+    url_to_image STRING,
+    published_at_utc TIMESTAMP_NTZ,
+    content_truncated STRING,
+    source_id STRING,
+    source_name STRING,
+    url_domain STRING,
+    content_full STRING,
+    content_size NUMBER,
+    ingested_at TIMESTAMP_LTZ DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Trucate & Delete
+TRUNCATE TABLE SIGNAL_EXTRACTION_DB.RAW.NEWS_ARTICLES;
+DROP TABLE SIGNAL_EXTRACTION_DB.RAW.NEWS_ARTICLES;
