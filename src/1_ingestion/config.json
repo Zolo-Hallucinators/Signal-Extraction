@@ -1,10 +1,46 @@
 {
+  "run_auto_pickup": "OracleScheduled",
+  "news_api_key_auto_pickup": "news_api_key_1",
   "runs": [
     {
-      "run_name": "PalantirTestRun",
+      "run_name": "OracleAllowed",
+      "entity_name": "Oracle",
+      "q": "oracle",
+      "from_days_ago": 25,
+      "endpoint": "https://newsapi.org/v2/everything",
+      "language": "en",
+      "sortBy": "publishedAt",
+      "page": "<CODE>",
+      "searchIn": "<CODE>"
+    },
+    {
+      "run_name": "OracleHistorical",
+      "entity_name": "Oracle",
+      "q": "oracle",
+      "from_days_ago": 1825,
+      "endpoint": "https://newsapi.org/v2/everything",
+      "language": "en",
+      "sortBy": "publishedAt",
+      "page": "<CODE>",
+      "searchIn": "<CODE>"
+    },
+    {
+      "run_name": "OracleScheduled",
+      "entity_name": "Oracle",
+      "q": "oracle",
+      "from_days_ago": 2,
+      "till_days": 3,
+      "endpoint": "https://newsapi.org/v2/everything",
+      "language": "en",
+      "sortBy": "publishedAt",
+      "page": "<CODE>",
+      "searchIn": "<CODE>"
+    },
+   {
+      "run_name": "PalantirAllowed",
       "entity_name": "Palantir",
       "q": "palantir",
-      "from_days_ago": 10,
+      "from_days_ago": 25,
       "endpoint": "https://newsapi.org/v2/everything",
       "language": "en",
       "sortBy": "publishedAt",
@@ -15,15 +51,29 @@
       "run_name": "PalantirHistorical",
       "entity_name": "Palantir",
       "q": "palantir",
-      "from_days_ago": 300,
+      "from_days_ago": 1825,
       "endpoint": "https://newsapi.org/v2/everything",
       "language": "en",
       "sortBy": "publishedAt",
       "page": "<CODE>",
       "searchIn": "<CODE>"
     },
+    {
+      "run_name": "PalantirScheduled",
+      "entity_name": "Palantir",
+      "q": "palantir",
+      "from_days_ago": 7,
+      "endpoint": "https://newsapi.org/v2/everything",
+      "language": "en",
+      "sortBy": "publishedAt",
+      "page": "<CODE>",
+      "searchIn": "<CODE>"
+    }
   ],
-  "news_api_key": "c494f280427646c78473013990b3cd45",
+  "news_api_key_list": {
+        "news_api_key_1": "c494f280427646c78473013990b3cd45",
+        "news_api_key_2": "f20a04b3e9f54ef392a46c831917804b"
+    },
   "snowflake": {
     "account" : "IDSXPIX-EFC09162",
     "user" : "ARAVINDSURESH",
