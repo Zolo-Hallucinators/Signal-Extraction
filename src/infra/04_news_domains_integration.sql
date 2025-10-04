@@ -19,6 +19,8 @@ CREATE OR REPLACE EXTERNAL ACCESS INTEGRATION news_domains_integration -- hard c
 DESCRIBE EXTERNAL ACCESS INTEGRATION news_domains_integration;
 DESCRIBE NETWORK RULE news_domains_nr; --value_list only able to be retrieved from here.
 SHOW NETWORK RULES LIKE 'news_domains_nr';
-SELECT VALUE_LIST 
-FROM INFORMATION_SCHEMA.NETWORK_RULES 
-WHERE NETWORK_RULE_NAME = 'news_domains_nr';
+
+-- [Not Working] Throwing 'SQL compilation error'
+-- SELECT VALUE_LIST 
+-- FROM INFORMATION_SCHEMA.NETWORK_RULES 
+-- WHERE NETWORK_RULE_NAME = 'news_domains_nr';
