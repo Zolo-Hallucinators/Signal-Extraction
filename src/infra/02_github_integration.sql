@@ -1,4 +1,4 @@
-// Following documentation from: https://docs.snowflake.com/en/developer-guide/git/git-setting-up#label-git-setup-token
+-- Following documentation from: https://docs.snowflake.com/en/developer-guide/git/git-setting-up#label-git-setup-token
 
 USE ROLE ACCOUNTADMIN;
 USE DATABASE SIGNAL_EXTRACTION_DB;
@@ -32,3 +32,4 @@ CREATE OR REPLACE GIT REPOSITORY SIGNAL_EXTRACTION_REPO
     ORIGIN = 'https://github.com/Zolo-Hallucinators/Signal-Extraction'
 
 -- SHOW GIT REPOSITORIES; -- Didn't work.
+-- Finally: When adding the 'Git Repository' to the workspace, for the 'Credentials secret', go to SIGNAL_EXTRACTION_DB > UTILS > my_git_token_secret
