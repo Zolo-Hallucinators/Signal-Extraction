@@ -2,6 +2,7 @@
   "runs": [
     {
       "run_name": "PalantirTestRun",
+      "entity_name": "Palantir",
       "q": "palantir",
       "from_days_ago": 10,
       "endpoint": "https://newsapi.org/v2/everything",
@@ -12,9 +13,15 @@
     },
     {
       "run_name": "PalantirHistorical",
-      "keywords": ["palantir"],
-      "from_days_ago": 300
-    }
+      "entity_name": "Palantir",
+      "q": "palantir",
+      "from_days_ago": 300,
+      "endpoint": "https://newsapi.org/v2/everything",
+      "language": "en",
+      "sortBy": "publishedAt",
+      "page": "<CODE>",
+      "searchIn": "<CODE>"
+    },
   ],
   "news_api_key": "c494f280427646c78473013990b3cd45",
   "snowflake": {
