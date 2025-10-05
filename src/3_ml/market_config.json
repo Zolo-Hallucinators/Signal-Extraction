@@ -1,0 +1,37 @@
+{
+  "run_auto_pickup": "OracleHistorical",
+  "market_api_key_auto_pickup": "market_api_key_2",
+  "runs": [
+    {
+      "run_name": "OracleHistorical",
+      "entity_name": "Oracle",
+      "endpoint": "https://www.alphavantage.co/query",
+      "function": "TIME_SERIES_DAILY",
+      "symbol": "ORCL",
+      "datatype": "json",
+      "outputsize": "full"
+    },
+    {
+      "run_name": "PalantirHistorical",
+      "entity_name": "Palantir",
+      "endpoint": "https://www.alphavantage.co/query",
+      "function": "TIME_SERIES_DAILY",
+      "symbol": "PLTR",
+      "datatype": "json",
+      "outputsize": "full"
+    }
+  ],
+  "market_api_key_list": {
+        "market_api_key_1": "ESDNSG7Y1KQ6CZ9K",
+        "market_api_key_2": "JTKM3LAKTM7KPT6C"
+    },
+  "snowflake": {
+    "account" : "CYWCXZB-EPC46775",
+    "user" : "ARAVINDSURESH03",
+    "password" : "Abirami38Aravind!",
+    "role" : "ACCOUNTADMIN",
+    "warehouse" : "COMPUTE_WH",
+    "database" : "SIGNAL_EXTRACTION_DB",
+    "schema" : "<CODE>"
+  }
+}
