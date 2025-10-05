@@ -75,12 +75,13 @@
         "news_api_key_2": "f20a04b3e9f54ef392a46c831917804b"
     },
   "snowflake": {
-    "account" : "IDSXPIX-EFC09162",
-    "user" : "ARAVINDSURESH",
-    "password" : "XXXXXXXXXXXXXXXXXX",
+    "account" : "CYWCXZB-EPC46775",
+    "user" : "ARAVINDSURESH03",
+    "password" : "Abirami38Aravind!",
     "role" : "ACCOUNTADMIN",
     "warehouse" : "COMPUTE_WH",
     "database" : "SIGNAL_EXTRACTION_DB",
     "schema" : "<CODE>"
   }
+}
 }
