@@ -1,6 +1,6 @@
 {
   "run_auto_pickup": "OracleScheduled",
-  "news_api_key_auto_pickup": "news_api_key_1",
+  "news_api_key_auto_pickup": "news_api_key_2",
   "runs": [
     {
       "run_name": "OracleAllowed",
@@ -28,7 +28,7 @@
       "run_name": "OracleScheduled",
       "entity_name": "Oracle",
       "q": "oracle",
-      "from_days_ago": 2,
+      "from_days_ago": 10,
       "till_days": 3,
       "endpoint": "https://newsapi.org/v2/everything",
       "language": "en",
@@ -83,5 +83,4 @@
     "database" : "SIGNAL_EXTRACTION_DB",
     "schema" : "<CODE>"
   }
-}
 }
