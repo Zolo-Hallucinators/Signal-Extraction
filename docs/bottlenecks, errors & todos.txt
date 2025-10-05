@@ -2,6 +2,7 @@
 TODO:
 - News Ingestion: Entity mapping, running queries related to the ticker catefory and related domains to get more idea.
 - Ingestion: use Snowflake Stream and implement Change Data Capture.
+- Market Ingestion: Create new hash logic for low frequency market data.
 
 CANDO:
 - Add entity in the news api before your start syncing it.
