@@ -1,6 +1,6 @@
 {
   "run_auto_pickup": "OracleHistorical",
-  "market_api_key_auto_pickup": "market_api_key_1",
+  "market_api_key_auto_pickup": "market_api_key_2",
   "runs": [
     {
       "run_name": "OracleHistorical",
