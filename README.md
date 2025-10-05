@@ -190,7 +190,7 @@ python src/4_frontend/streamlit_app.py
 
 **Aravind Suresh**  
 Data Engineer @ GE Aerospace | ML & Cloud Enthusiast  
-📍 [LinkedIn](https://linkedin.com/in/aravindsuresh03) • [GitHub](https://github.com/aravxdev)
+📍 [LinkedIn](https://www.linkedin.com/in/aravind-suresh8) • [GitHub](https://github.com/aravxdev)
 
 **Abirami Sadasivam**  
 SDE @ VISA | ML & Cloud Enthusiast  
@@ -213,7 +213,7 @@ This project is licensed under the [MIT License](LICENSE).
 Special thanks to:
 - **Snowflake** for its developer ecosystem  
 - **Alpha Vantage** and **News API** for financial data sources  
-- **Hackathon Mentors** and collaborators for their support  
+- **Hackathon Mentors** and collaborators for their support ([Snowflake - The Dev Premiere League](https://vision.hack2skill.com/event/gcc-dev-premier-league-2025))
 
 ---
 
