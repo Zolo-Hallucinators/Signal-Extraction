@@ -1,83 +1,34 @@
 {
-  "run_auto_pickup": "OracleScheduled",
-  "news_api_key_auto_pickup": "news_api_key_1",
+  "run_auto_pickup": "OracleHistorical",
+  "market_api_key_auto_pickup": "market_api_key_1",
   "runs": [
-    {
-      "run_name": "OracleAllowed",
-      "entity_name": "Oracle",
-      "q": "oracle",
-      "from_days_ago": 25,
-      "endpoint": "https://newsapi.org/v2/everything",
-      "language": "en",
-      "sortBy": "publishedAt",
-      "page": "<CODE>",
-      "searchIn": "<CODE>"
-    },
     {
       "run_name": "OracleHistorical",
       "entity_name": "Oracle",
-      "q": "oracle",
-      "from_days_ago": 1825,
-      "endpoint": "https://newsapi.org/v2/everything",
-      "language": "en",
-      "sortBy": "publishedAt",
-      "page": "<CODE>",
-      "searchIn": "<CODE>"
-    },
-    {
-      "run_name": "OracleScheduled",
-      "entity_name": "Oracle",
-      "q": "oracle",
-      "from_days_ago": 2,
-      "till_days": 3,
-      "endpoint": "https://newsapi.org/v2/everything",
-      "language": "en",
-      "sortBy": "publishedAt",
-      "page": "<CODE>",
-      "searchIn": "<CODE>"
-    },
-   {
-      "run_name": "PalantirAllowed",
-      "entity_name": "Palantir",
-      "q": "palantir",
-      "from_days_ago": 25,
-      "endpoint": "https://newsapi.org/v2/everything",
-      "language": "en",
-      "sortBy": "publishedAt",
-      "page": "<CODE>",
-      "searchIn": "<CODE>"
+      "endpoint": "https://www.alphavantage.co/query",
+      "function": "TIME_SERIES_DAILY",
+      "symbol": "ORCL",
+      "datatype": "json",
+      "outputsize": "full"
     },
     {
       "run_name": "PalantirHistorical",
       "entity_name": "Palantir",
-      "q": "palantir",
-      "from_days_ago": 1825,
-      "endpoint": "https://newsapi.org/v2/everything",
-      "language": "en",
-      "sortBy": "publishedAt",
-      "page": "<CODE>",
-      "searchIn": "<CODE>"
-    },
-    {
-      "run_name": "PalantirScheduled",
-      "entity_name": "Palantir",
-      "q": "palantir",
-      "from_days_ago": 7,
-      "endpoint": "https://newsapi.org/v2/everything",
-      "language": "en",
-      "sortBy": "publishedAt",
-      "page": "<CODE>",
-      "searchIn": "<CODE>"
+      "endpoint": "https://www.alphavantage.co/query",
+      "function": "TIME_SERIES_DAILY",
+      "symbol": "PLTR",
+      "datatype": "json",
+      "outputsize": "full"
     }
   ],
-  "news_api_key_list": {
-        "news_api_key_1": "c494f280427646c78473013990b3cd45",
-        "news_api_key_2": "f20a04b3e9f54ef392a46c831917804b"
+  "market_api_key_list": {
+        "market_api_key_1": "ESDNSG7Y1KQ6CZ9K",
+        "market_api_key_2": "JTKM3LAKTM7KPT6C"
     },
   "snowflake": {
-    "account" : "IDSXPIX-EFC09162",
-    "user" : "ARAVINDSURESH",
-    "password" : "XXXXXXXXXXXXXXXXXX",
+    "account" : "CYWCXZB-EPC46775",
+    "user" : "ARAVINDSURESH03",
+    "password" : "Abirami38Aravind!",
     "role" : "ACCOUNTADMIN",
     "warehouse" : "COMPUTE_WH",
     "database" : "SIGNAL_EXTRACTION_DB",
