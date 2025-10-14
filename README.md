@@ -157,6 +157,7 @@ Edit `configs/snowflake_config.json`:
 
 ### 5️⃣ **Run Pipeline**
 ```bash
+execute infra/{code}
 python src/1_ingestion/1_ingest_market_api.ipynb
 python src/1_ingestion/1_ingest_news_api.py
 execute src/2_transformation_and_feature_engineering/1_transformation_and_feature_engineering_market_data.sql
