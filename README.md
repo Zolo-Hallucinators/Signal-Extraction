@@ -56,6 +56,12 @@ The goal: **generate predictive buy/sell signals** by combining **market price m
 | **Visualization** | Streamlit | Application & Reporing layer |
 
 ---
+## 🎬 Demo & Presentation
+
+- Demo video: [Watch here](https://drive.google.com/file/d/1iWiBB3lU3H3SMDZ82SmHFFqlPTmzbApU/view?usp=drive_link) on Google Drive.
+- Presentation (PPT/PDF): [Check it out here](https://docs.google.com/presentation/d/1A272S39itsuTwZJN7cSLmhS9Qb8TdQCz/edit?usp=drive_link&ouid=111214650582844966665&rtpof=true&sd=true)
+
+
 
 ## 🧩 Architecture
 
@@ -87,6 +93,15 @@ The goal: **generate predictive buy/sell signals** by combining **market price m
          └───────────────────┘
 ```
 
+[![Architecture](./docs/media/Architecture-1.png)](./docs/media/Architecture-1.png)
+---
+
+<details>
+<summary>🧑‍💼 <b>Use Case Diagram</b> (click to expand)</summary>
+
+[![Use Case Diagram](./docs/media/UseCase-1.png)](./docs/media/UseCase-1.png)
+</details>
+
 ---
 
 <details>
@@ -117,7 +132,6 @@ The goal: **generate predictive buy/sell signals** by combining **market price m
 ├── README.md
 └── LICENSE
 ```
-
 </details>
 
 ---
