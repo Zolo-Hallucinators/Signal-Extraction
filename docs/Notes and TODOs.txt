@@ -30,3 +30,10 @@ FEATURE ENGINEERED PRICE CSV
 3. featured news csv
 
 (model and explainability)
+
+[SID SIDE RESULTS]
+Imp: TEST 2 MONTHS (PREDICTED SCORES) + FUTURE DATA (TRAILING 1 WEEK)
+    CSV COLS (*)
+    PREDICTED PRICE 
+    SIGNAL (BUY SELL)
+    EXPLAINABILITY JSON {feature_name: feature_magnitude}
