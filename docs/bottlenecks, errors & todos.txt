@@ -12,3 +12,21 @@ ERROR:
 
 BottleNecks:
 - News Ingestion: free news api only allows upto a month old of articles i.e 30, but we need 1825 or 5 years of data to get some insights.
+
+
+WHAT SHOWS IN THE APPLICATION
+1. NEWS FEATURES
+2. PROPER NOT FITTING BUY SELL CURVE
+3. based on signals, backtested results (below shown.)
+4. explainability - click a point and get the top features used.
+
+FEATURE ENGINEERED PRICE CSV
+[TODO] FEATURE ENGINEERED Sentiment CSV 
+[SID] Model will process both data and get the final Table.
+    -> Predicted Price | BUY/SELL | top_12345/explainability_col - include it in existing CSV.
+
+1. price csv 
+2. intermediate news csv
+3. featured news csv
+
+(model and explainability)
