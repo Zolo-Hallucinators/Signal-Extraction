@@ -7,7 +7,7 @@
 
 -- DROP Table Queries.
 -- DROP TABLE SIGNAL_EXTRACTION_DB.STAGING.MARKET_DATA_FEATURES
--- DROP VIEW SIGNAL_EXTRACTION_DB.STAGING.VW_LATEST_MARKET_FEATURES;
+-- DROP VIEW SIGNAL_EXTRACTION_DB.STAGING.VW_MODEL_READY_FEATURES;
 -- DROP PROCEDURE SIGNAL_EXTRACTION_DB.STAGING.TRANSFORM_MARKET_DATA();
 
 -- =====================================================
@@ -288,63 +288,64 @@ WHERE row_num > 1  -- Exclude first row due to lag calculations
 ORDER BY symbol, date;
 
 
--- =====================================================
--- Create a view for model-ready data (excludes poor quality data records)
--- =====================================================
-CREATE OR REPLACE VIEW SIGNAL_EXTRACTION_DB.STAGING.VW_MODEL_READY_FEATURES AS
-SELECT 
-    feature_id,
-    date,
-    symbol,
-    entity_name,
-    -- OHLCV
-    open, high, low, close, volume,
-    -- Features
-    daily_return, log_return, price_range, price_range_pct,
-    ma_5, ma_10, ma_20, ma_50, ema_12, ema_26,
-    rsi_14, macd, macd_signal, macd_histogram,
-    volatility_5d, volatility_10d, volatility_20d, atr_14,
-    volume_ma_5, volume_ma_20, volume_ratio,
-    close_lag_1, close_lag_2, close_lag_3, close_lag_5, volume_lag_1,
-    rolling_max_20, rolling_min_20,
-    distance_from_high_20, distance_from_low_20,
-    -- Targets
-    next_day_close, next_day_return, price_direction
-FROM SIGNAL_EXTRACTION_DB.STAGING.MARKET_DATA_FEATURES
-WHERE data_quality_flag = 'VALID'
-    AND next_day_close IS NOT NULL  -- Exclude last row (no target)
-ORDER BY symbol, date;
+-- -- =====================================================
+-- -- Create a view for model-ready data (excludes poor quality data records)
+-- -- =====================================================
+-- CREATE OR REPLACE VIEW SIGNAL_EXTRACTION_DB.STAGING.VW_MODEL_READY_FEATURES AS
+-- SELECT 
+--     feature_id,
+--     date,
+--     symbol,
+--     entity_name,
+--     -- OHLCV
+--     open, high, low, close, volume,
+--     -- Features
+--     daily_return, log_return, price_range, price_range_pct,
+--     ma_5, ma_10, ma_20, ma_50, ema_12, ema_26,
+--     rsi_14, macd, macd_signal, macd_histogram,
+--     volatility_5d, volatility_10d, volatility_20d, atr_14,
+--     volume_ma_5, volume_ma_20, volume_ratio,
+--     close_lag_1, close_lag_2, close_lag_3, close_lag_5, volume_lag_1,
+--     rolling_max_20, rolling_min_20,
+--     distance_from_high_20, distance_from_low_20,
+--     -- Targets
+--     next_day_close, next_day_return, price_direction
+-- FROM SIGNAL_EXTRACTION_DB.STAGING.MARKET_DATA_FEATURES
+-- WHERE data_quality_flag = 'VALID'
+--     AND next_day_close IS NOT NULL  -- Exclude last row (no target)
+-- ORDER BY symbol, date;
 
--- =====================================================
--- Data validation queries
--- =====================================================
+-- -- =====================================================
+-- -- Data validation queries
+-- -- =====================================================
 
--- Check record counts per symbol
-SELECT 
-    symbol,
-    entity_name,
-    COUNT(*) AS total_records,
-    MIN(date) AS earliest_date,
-    MAX(date) AS latest_date,
-    COUNT(CASE WHEN data_quality_flag = 'VALID' THEN 1 END) AS valid_records
-FROM SIGNAL_EXTRACTION_DB.STAGING.MARKET_DATA_FEATURES
-GROUP BY symbol, entity_name
-ORDER BY symbol;
+-- -- Check record counts per symbol
+-- SELECT 
+--     symbol,
+--     entity_name,
+--     COUNT(*) AS total_records,
+--     MIN(date) AS earliest_date,
+--     MAX(date) AS latest_date,
+--     COUNT(CASE WHEN data_quality_flag = 'VALID' THEN 1 END) AS valid_records
+-- FROM SIGNAL_EXTRACTION_DB.STAGING.MARKET_DATA_FEATURES
+-- GROUP BY symbol, entity_name
+-- ORDER BY symbol;
 
--- Check for missing values in key features
-SELECT 
-    'ma_20' AS feature_name, COUNT(*) AS missing_count 
-FROM SIGNAL_EXTRACTION_DB.STAGING.MARKET_DATA_FEATURES WHERE ma_20 IS NULL
-UNION ALL
-SELECT 'rsi_14', COUNT(*) FROM SIGNAL_EXTRACTION_DB.STAGING.MARKET_DATA_FEATURES WHERE rsi_14 IS NULL
-UNION ALL
-SELECT 'macd', COUNT(*) FROM SIGNAL_EXTRACTION_DB.STAGING.MARKET_DATA_FEATURES WHERE macd IS NULL
-UNION ALL
-SELECT 'volatility_20d', COUNT(*) FROM SIGNAL_EXTRACTION_DB.STAGING.MARKET_DATA_FEATURES WHERE volatility_20d IS NULL;
+-- -- Check for missing values in key features
+-- SELECT 
+--     'ma_20' AS feature_name, COUNT(*) AS missing_count 
+-- FROM SIGNAL_EXTRACTION_DB.STAGING.MARKET_DATA_FEATURES WHERE ma_20 IS NULL
+-- UNION ALL
+-- SELECT 'rsi_14', COUNT(*) FROM SIGNAL_EXTRACTION_DB.STAGING.MARKET_DATA_FEATURES WHERE rsi_14 IS NULL
+-- UNION ALL
+-- SELECT 'macd', COUNT(*) FROM SIGNAL_EXTRACTION_DB.STAGING.MARKET_DATA_FEATURES WHERE macd IS NULL
+-- UNION ALL
+-- SELECT 'volatility_20d', COUNT(*) FROM SIGNAL_EXTRACTION_DB.STAGING.MARKET_DATA_FEATURES WHERE volatility_20d IS NULL;
 
--- Sample the data
-SELECT * 
-FROM SIGNAL_EXTRACTION_DB.STAGING.VW_MODEL_READY_FEATURES 
-WHERE symbol IN ('PLTR', 'ORCL')
-ORDER BY symbol, date DESC
-LIMIT 10;
+-- -- Sample the data
+-- SELECT * 
+-- FROM SIGNAL_EXTRACTION_DB.STAGING.VW_MODEL_READY_FEATURES 
+-- WHERE symbol IN ('PLTR', 'ORCL')
+-- ORDER BY symbol, date DESC
+-- LIMIT 10;
+

@@ -6,7 +6,7 @@ USE SCHEMA UTILS;
 CREATE OR REPLACE NETWORK RULE news_domains_nr -- hard coded in ensure_network_rule_for_domain()
     MODE = EGRESS   -- means outbound traffice FROM snowflake to external is allowed.
     TYPE = HOST_PORT
-    VALUE_LIST = ('finance.yahoo.com', 'www.activistpost.com')
+    VALUE_LIST = ('finance.yahoo.com')
     ;
 
 -- NR 1
