@@ -1,7 +1,31 @@
 {
-  "run_auto_pickup": "OracleScheduled",
-  "news_api_key_auto_pickup": "news_api_key_1",
+  "run_auto_pickup": "PalantirScheduled",
+  "news_api_key_auto_pickup": "news_api_key_2",
   "runs": [
+    {
+      "run_name": "OracleScheduled",
+      "entity_name": "Oracle",
+      "q": "oracle",
+      "from_days_ago": 30,
+      "till_days": 0,
+      "endpoint": "https://newsapi.org/v2/everything",
+      "language": "en",
+      "sortBy": "publishedAt",
+      "page": "<CODE>",
+      "searchIn": "<CODE>"
+    },
+    {
+      "run_name": "PalantirScheduled",
+      "entity_name": "Palantir",
+      "q": "palantir",
+      "from_days_ago": 30,
+      "till_days": 0,
+      "endpoint": "https://newsapi.org/v2/everything",
+      "language": "en",
+      "sortBy": "publishedAt",
+      "page": "<CODE>",
+      "searchIn": "<CODE>"
+    },
     {
       "run_name": "OracleAllowed",
       "entity_name": "Oracle",
@@ -25,18 +49,6 @@
       "searchIn": "<CODE>"
     },
     {
-      "run_name": "OracleScheduled",
-      "entity_name": "Oracle",
-      "q": "oracle",
-      "from_days_ago": 30,
-      "till_days": 0,
-      "endpoint": "https://newsapi.org/v2/everything",
-      "language": "en",
-      "sortBy": "publishedAt",
-      "page": "<CODE>",
-      "searchIn": "<CODE>"
-    },
-   {
       "run_name": "PalantirAllowed",
       "entity_name": "Palantir",
       "q": "palantir",
@@ -52,17 +64,6 @@
       "entity_name": "Palantir",
       "q": "palantir",
       "from_days_ago": 1825,
-      "endpoint": "https://newsapi.org/v2/everything",
-      "language": "en",
-      "sortBy": "publishedAt",
-      "page": "<CODE>",
-      "searchIn": "<CODE>"
-    },
-    {
-      "run_name": "PalantirScheduled",
-      "entity_name": "Palantir",
-      "q": "palantir",
-      "from_days_ago": 7,
       "endpoint": "https://newsapi.org/v2/everything",
       "language": "en",
       "sortBy": "publishedAt",

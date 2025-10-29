@@ -4,11 +4,16 @@ USE ROLE ACCOUNTADMIN;
 USE DATABASE SIGNAL_EXTRACTION_DB;
 USE SCHEMA UTILS;
 
+-- Drop Everything
+DROP GIT REPOSITORY IF EXISTS SIGNAL_EXTRACTION_REPO;
+DROP API INTEGRATION IF EXISTS github_integration;
+DROP SECRET IF EXISTS my_git_token_secret;
+
 -- Base to create secrets
 CREATE OR REPLACE SECRET my_git_token_secret
     TYPE = PASSWORD
     USERNAME = 'Snowflake-Signal-Extraction'
-    PASSWORD = 'XXX' -- MAIN UPDATED
+    PASSWORD = 'xxx' -- MAIN UPDATEDD
     ;
     
 SHOW SECRETS;
@@ -29,7 +34,12 @@ SHOW INTEGRATIONS;
 CREATE OR REPLACE GIT REPOSITORY SIGNAL_EXTRACTION_REPO
     API_INTEGRATION = github_integration
     GIT_CREDENTIALS = my_git_token_secret
-    ORIGIN = 'https://github.com/Zolo-Hallucinators/Signal-Extraction'
-
+    ORIGIN = 'https://github.com/Zolo-Hallucinators/Signal-Extraction.git'
+    ;
 -- SHOW GIT REPOSITORIES; -- Didn't work.
 -- Finally: When adding the 'Git Repository' to the workspace, for the 'Credentials secret', go to SIGNAL_EXTRACTION_DB > UTILS > my_git_token_secret
+
+ALTER GIT REPOSITORY SIGNAL_EXTRACTION_REPO FETCH;
+SHOW GIT REPOSITORIES;
+
+-- ALTER GIT REPOSITORY SIGNAL_EXTRACTION_REPO PUSH BRANCH = 'feature/pre-demo-changes'; -- SQL Compilation error
