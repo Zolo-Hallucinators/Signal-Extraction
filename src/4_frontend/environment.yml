@@ -7,3 +7,4 @@ dependencies:
   - snowflake-ml-python=1.14.0
   - snowflake-snowpark-python=
   - streamlit=
+  - streamlit-plotly-events=0.0.6

@@ -3,5 +3,7 @@ channels:
   - snowflake
 dependencies:
   - matplotlib=*
-  - snowflake-ml-python=*
-  - snowflake-snowpark-python=*
+  - seaborn=*
+  - shap=*
+  - sklearn-pandas=*
+  - tqdm=*

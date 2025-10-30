@@ -1,0 +1,24 @@
+{
+  "run_auto_pickup": "PalantirHistorical",
+  "runs": [
+    {
+      "run_name": "OracleHistorical",
+      "entity_name": "Oracle",
+      "symbol": "ORCL"
+    },
+    {
+      "run_name": "PalantirHistorical",
+      "entity_name": "Palantir",
+      "symbol": "PLTR"
+    }
+  ],
+  "snowflake": {
+    "account" : "CYWCXZB-EPC46775",
+    "user" : "ARAVINDSURESH03",
+    "password" : "Abirami38Aravind!",
+    "role" : "ACCOUNTADMIN",
+    "warehouse" : "COMPUTE_WH",
+    "database" : "SIGNAL_EXTRACTION_DB",
+    "schema" : "<CODE>"
+  }
+}

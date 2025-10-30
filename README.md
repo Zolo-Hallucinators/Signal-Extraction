@@ -1,4 +1,4 @@
-# 🚀 Signal Extraction ML Pipeline  
+# 🚀 Signal Extraction ML Pipeline
 *A Snowflake-powered end-to-end machine learning pipeline for financial signal generation and prediction.*
 
 ---
@@ -6,6 +6,7 @@
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
 ![Snowflake](https://img.shields.io/badge/Snowflake-Data%20Cloud-lightblue)
 ![Machine Learning](https://img.shields.io/badge/ML-XGBoost-green)
+![Gradient Regressor](https://img.shields.io/badge/ML-Gradient%20Regressor-orange)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 ![Status](https://img.shields.io/badge/Status-Active-success)
 
@@ -13,7 +14,7 @@
 
 ## 📖 Overview
 
-This project was developed as part of the **Snowflake Hackathon**, focusing on building a complete **data ingestion → transformation → prediction → visualization** pipeline.  
+This project was developed as part of the **Snowflake Hackathon - The Dev Primere League**, focusing on building a complete **data ingestion → transformation → prediction → visualization** pipeline.  
 It leverages **Snowflake’s Data Cloud**, **Snowpark**, and **Python ML libraries** to extract meaningful trading signals from financial and news data.
 
 The goal: **generate predictive buy/sell signals** by combining **market price movements** and **news sentiment analysis** — all within a scalable Snowflake architecture.
@@ -26,21 +27,25 @@ The goal: **generate predictive buy/sell signals** by combining **market price m
 - Fetches stock price data via [Alpha Vantage API](https://www.alphavantage.co/)  
 - Collects related financial news via [News API](https://newsapi.org/)
 
-✅ **Medallion Architecture (RAW → CURATED → ML)**
-- Structured Snowflake layers for data governance and efficiency
+✅ **Feature generation (price & sentiment)**  
+- Technical indicators: EMA, RSI, MACD and additional momentum/volatility features derived from price time series.  
+- News/sentiment features: polarity, subjectivity, entity-level signals, recency and source weighting for each article.
 
-✅ **Transformation with SQL + Snowpark**
-- Includes normalization, feature engineering, and EMA computations
+✅ **Explainability for price & sentiment**  
+- Model- and feature-level explanations (SHAP / feature importance) for both price indicators and sentiment inputs(aritcle impact analysis), surfaced per prediction to justify signals.
 
-✅ **Machine Learning Pipeline**
-- XGBoost-based model trained on curated Snowflake data  
-- Predicts directional signals and confidence scores
+✅ **Backtest engine**  
+- Event-driven backtester that simulates trade execution, transaction costs, PnL, Sharpe, drawdown and other portfolio metrics to validate strategy profitability.
 
-✅ **Fully Automated Orchestration**
-- Ready for **Airflow** or **Snowflake Tasks / Streams** integration
+✅ **Fully automated orchestration**  
+- End-to-end scheduling using Snowflake Tasks & Streams (Airflow-compatible) to automate ingestion → transform → training → scoring → backtests on a configurable cadence.
 
-✅ **Visualization Layer**
-- Interactive dashboards built for **Spotfire / Streamlit**
+✅ **ML pipeline & sentiment classification**  
+- Training and inference with XGBoost and GradientRegressor implemented in Snowpark/Python.  
+- AI_CLASSIFY used for news sentiment labeling and an annotated dataset maintained for live news to improve and validate classifiers.
+
+✅ **Visualization layer**  
+- Streamlit application for interactive dashboards: signal explorer, explainability overlays, backtest results, and model performance monitoring.
 
 ---
 
@@ -52,49 +57,24 @@ The goal: **generate predictive buy/sell signals** by combining **market price m
 | **Compute** | Snowflake Warehouse (**COMPUTE_WH**) | Scalable compute for ETL + ML |
 | **Ingestion** | Python, REST APIs | Pulls stock + news data |
 | **Transformation** | Snowflake SQL, Snowpark | Data cleaning and feature creation |
-| **ML** | Python (XGBoost, Pandas) | Model training & prediction |
+| **ML** | Python (XGBoost, Pandas), Snowflake Libs | Model training & prediction |
 | **Visualization** | Streamlit | Application & Reporing layer |
 
 ---
-## 🎬 Demo & Presentation
 
-- Demo video: [Watch here](https://drive.google.com/file/d/1iWiBB3lU3H3SMDZ82SmHFFqlPTmzbApU/view?usp=drive_link) on Google Drive.
-- Presentation (PPT/PDF): [Check it out here](https://docs.google.com/presentation/d/1A272S39itsuTwZJN7cSLmhS9Qb8TdQCz/edit?usp=drive_link&ouid=111214650582844966665&rtpof=true&sd=true)
+## 🎬 Submission & Showcase Resources
 
+- Idea Submission PPT (5 Oct 2025): [View PPT](https://docs.google.com/presentation/d/1A272S39itsuTwZJN7cSLmhS9Qb8TdQCz/edit?usp=drive_link&ouid=111214650582844966665&rtpof=true&sd=true)  
+- Demo video submission record (5 Oct 2025): [Watch here](https://docs.google.com/spreadsheets/d/13Ox-XF97oV5iL6ayVca-iZSWQKuh_CHZ2eAQudx7dWA/edit?usp=drive_link)  
+- Pitch deck / PPT (30 Oct 2025): [View PPT](https://docs.google.com/document/d/1c9Qy6GgJpTSRA4xQ8zxRiReXrwkVUUJwiLLs-sSE3p8/edit?usp=drive_link)  
+- Streamlit Dashboard/Application (30 Oct 2025): [View here](https://app.snowflake.com/us-east-1/lac70367/#/streamlit-apps/SIGNAL_EXTRACTION_DB.UTILS.AINREU5NXYDJBG2Y)
 
 
 ## 🧩 Architecture
 
-```
-         ┌────────────────────┐
-         │   API Ingestion    │
-         │ (Alpha Vantage,    │
-         │   News API)        │
-         └────────┬───────────┘
-                  │
-         ┌────────▼──────────┐
-         │ Snowflake Staging │
-         │  (RAW Layer)      │
-         └────────┬──────────┘
-                  │
-         ┌────────▼──────────┐
-         │ Data Transformation│
-         │  (STAGING Layer)   │
-         └────────┬──────────┘
-                  │
-         ┌────────▼──────────┐
-         │ ML Pipeline (Python│
-         │ + Snowpark UDFs)   │
-         └────────┬──────────┘
-                  │
-         ┌────────▼──────────┐
-         │ Visualization     │
-         │  (Streamlit)      │
-         └───────────────────┘
-```
+[![Architecture](./docs/Diagrams/Architecture-and-Flow-Diagram.png)](./docs/Diagrams/Architecture-and-Flow-Diagram.png)
 
-[![Architecture](./docs/media/Architecture-1.png)](./docs/media/Architecture-1.png)
----
+## 🗂️ Use Case & Repository Structure
 
 <details>
 <summary>🧑‍💼 <b>Use Case Diagram</b> (click to expand)</summary>
@@ -171,33 +151,38 @@ Edit `configs/snowflake_config.json`:
 
 ### 5️⃣ **Run Pipeline**
 ```bash
+# Infra Setup
 execute infra/{code}
+# Ingestion Execution
 python src/1_ingestion/1_ingest_market_api.ipynb
 python src/1_ingestion/1_ingest_news_api.py
-execute src/2_transformation_and_feature_engineering/1_transformation_and_feature_engineering_market_data.sql
-python src/3_ml/1_analyze_news_data.ipynb
+# Transformation & Feature Generation Execution
+execute 2_transformation_and_feature_engineering/1_transform_and_feature_engineering_market_data.sql
+python 2_transformation_and_feature_engineering/1_generate_news_articles_features.ipynb
+# ML Execution
+python src/3_ml/1_analyze_news_data.sql
 python src/3_ml/1_predict_market_data.ipynb
+python src/3_ml/2_backtest_market_data.ipynb
+# Visualization Application Setup
 python src/4_frontend/streamlit_app.py
 ```
 
 ---
 
-## 📊 Example Outputs
-
+## 📊 Prediction Outputs
+### Price Prediction
 | Symbol | Date | Predicted Signal | Confidence |
 |--------|------|------------------|-------------|
 | AAPL | 2025-10-01 | **Buy** | 0.87 |
 | ORCL | 2025-10-01 | **Sell** | 0.78 |
 | TSLA | 2025-10-01 | **Hold** | 0.65 |
+### Sentiment Analysis
+[TODO]
 
 ---
 
-## 🔮 Future Enhancements
-
-- [ ] Automate runs using **Snowflake Tasks**  
-- [ ] Add **sentiment classification** via NLP  
-- [ ] Deploy model versioning with **MLflow**  
-- [ ] Real-time signal updates using **Snowpipe + EventBridge**
+## 📊 Visualization Outputs
+[TODO]
 
 ---
 

@@ -1,0 +1,6 @@
+Description:
+We built an end-to-end solution that ingests market and news data, maintains historical records, generates a time-synced dataset, runs ML models for price prediction and sentiment analysis, provides actionable signals, includes explainability, and features a backtesting engine to evaluate strategy performance.
+
+Technology:
+Our solution leverages Python and APIs for ingestion and transformation, using Snowflake Tables, Medallion Architecture, Snowpipe, and stages. Data storage is handled with SQL and Snowflake databases/tables. For machine learning, we use Python, XGBoost, and ML libraries, integrated with Snowpark ML, Cortex Search, DataFrames, and Python UDFs. Explainability and backtesting are powered by Python, NLP libraries, and statistical analysis. The frontend and reporting are delivered via a Streamlit application integrated with Snowflake.
+
