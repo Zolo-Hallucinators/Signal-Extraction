@@ -169,20 +169,15 @@ python src/4_frontend/streamlit_app.py
 
 ---
 
-## 📊 Prediction Outputs
-### Price Prediction
-| Symbol | Date | Predicted Signal | Confidence |
-|--------|------|------------------|-------------|
-| AAPL | 2025-10-01 | **Buy** | 0.87 |
-| ORCL | 2025-10-01 | **Sell** | 0.78 |
-| TSLA | 2025-10-01 | **Hold** | 0.65 |
+## Outputs & Visualization
+### 📊 Price Prediction
+[TODO - Add curve photo]
+
 ### Sentiment Analysis
-[TODO]
+[TODO - add news ranked]
 
----
-
-## 📊 Visualization Outputs
-[TODO]
+### Explainability Analysis
+[TODO - add explainability outputs]
 
 ---
 
