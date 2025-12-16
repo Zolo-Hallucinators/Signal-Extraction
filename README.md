@@ -115,17 +115,17 @@ The goal: **generate predictive buy/sell signals** by combining **market price m
 <summary>📈 <b>Visualizations</b> (click to expand)</summary>
 
 ### 📈 Price Prediction Graph
-[![Price Prediction Graph](./docs/demo-screenshots/1_main_graph.png)](./docs/demo-screenshots/1_main_graph.png)
-[![Price Prediction Graph](./docs/demo-screenshots/1_main_graph_with_hover.png)](./docs/demo-screenshots/1_main_graph_with_hover.png)
+[![Price Prediction Graph](./docs/demo_screenshots/1_main_graph.png)](./docs/demo_screenshots/1_main_graph.png)
+[![Price Prediction Graph](./docs/demo_screenshots/1_main_graph_with_hover.png)](./docs/demo_screenshots/1_main_graph_with_hover.png)
 
 ### 🔍 Price Explainability
-[![Price Explainability](./docs/demo-screenshots/3_price_explainability.png)](./docs/demo-screenshots/3_price_explainability.png)
+[![Price Explainability](./docs/demo_screenshots/3_price_explainability.png)](./docs/demo_screenshots/3_price_explainability.png)
 
 ### 📊 Model Performance Summary
-[![Model Performance Summary](./docs/demo-screenshots/4_model_performance_summary.png)](./docs/demo-screenshots/4_model_performance_summary.png)
+[![Model Performance Summary](./docs/demo_screenshots/4_model_performance_summary.png)](./docs/demo_screenshots/4_model_performance_summary.png)
 
 ### 📰 News Sentiment Ranked
-[![News Sentiment Ranked](./docs/demo-screenshots/5_news_sentiment_ranked.png)](./docs/demo-screenshots/5_news_sentiment_ranked.png)
+[![News Sentiment Ranked](./docs/demo_screenshots/5_news_sentiment_ranked.png)](./docs/demo_screenshots/5_news_sentiment_ranked.png)
 
 </details>
 
@@ -135,10 +135,10 @@ The goal: **generate predictive buy/sell signals** by combining **market price m
 <summary>📊 <b>Underlying Data Outputs</b> (click to expand)</summary>
 
 ### 📋 Underlying Chart Data
-[![Underlying Chart Data](./docs/demo-screenshots/6_underlying_chart_data.png)](./docs/demo-screenshots/6_underlying_chart_data.png)
+[![Underlying Chart Data](./docs/demo_screenshots/6_underlying_chart_data.png)](./docs/demo_screenshots/6_underlying_chart_data.png)
 
 ### 📦 Indicators JSON Dump
-[![Indicators JSON Dump](./docs/demo-screenshots/2_indicators_json_dump.png)](./docs/demo-screenshots/2_indicators_json_dump.png)
+[![Indicators JSON Dump](./docs/demo_screenshots/2_indicators_json_dump.png)](./docs/demo_screenshots/2_indicators_json_dump.png)
 
 </details>
 
