@@ -3,6 +3,7 @@
 
 ---
 
+![Hackathon Runner-Up](https://img.shields.io/badge/Hackathon-Runner%20Up-red)
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
 ![Snowflake](https://img.shields.io/badge/Snowflake-Data%20Cloud-lightblue)
 ![Machine Learning](https://img.shields.io/badge/ML-XGBoost-green)
@@ -12,40 +13,39 @@
 
 ---
 
+[![Signal Extraction ML Pipeline Cover](./docs/diagrams/github_cover_image.png)](./docs/diagrams/github_cover_image.png)
+
 ## 📖 Overview
 
-This project was developed as part of the **Snowflake Hackathon - The Dev Primere League**, focusing on building a complete **data ingestion → transformation → prediction → visualization** pipeline.  
+**🏆 Hackathon Runner-Up** in **[Snowflake's Dev Premier League!](https://vision.hack2skill.com/event/gcc-dev-premier-league-2025)** 
+
+This project was developed as part of the **Snowflake Hackathon**, securing a top runner-up position by building a complete **data ingestion → transformation → prediction → visualization** pipeline.  
+
 It leverages **Snowflake’s Data Cloud**, **Snowpark**, and **Python ML libraries** to extract meaningful trading signals from financial and news data.
 
 The goal: **generate predictive buy/sell signals** by combining **market price movements** and **news sentiment analysis** — all within a scalable Snowflake architecture.
 
 ---
 
-## 🧠 Features
+## 🏆 Achievements
 
-✅ **Automated Data Ingestion**
-- Fetches stock price data via [Alpha Vantage API](https://www.alphavantage.co/)  
-- Collects related financial news via [News API](https://newsapi.org/)
+- **Runner-Up**: Secured Runner-Up place in Snowflake's Dev Premier League Hackathon for innovative ML pipeline design.
+- **End-to-End Solution**: Fully automated pipeline from data ingestion to visualization, deployed on Snowflake.
+- **Real-World Impact**: Demonstrated predictive trading signals with explainability and backtesting.
 
-✅ **Feature generation (price & sentiment)**  
-- Technical indicators: EMA, RSI, MACD and additional momentum/volatility features derived from price time series.  
-- News/sentiment features: polarity, subjectivity, entity-level signals, recency and source weighting for each article.
+---
 
-✅ **Explainability for price & sentiment**  
-- Model- and feature-level explanations (SHAP / feature importance) for both price indicators and sentiment inputs(aritcle impact analysis), surfaced per prediction to justify signals.
+## ✨ Key Features
 
-✅ **Backtest engine**  
-- Event-driven backtester that simulates trade execution, transaction costs, PnL, Sharpe, drawdown and other portfolio metrics to validate strategy profitability.
-
-✅ **Fully automated orchestration**  
-- End-to-end scheduling using Snowflake Tasks & Streams (Airflow-compatible) to automate ingestion → transform → training → scoring → backtests on a configurable cadence.
-
-✅ **ML pipeline & sentiment classification**  
-- Training and inference with XGBoost and GradientRegressor implemented in Snowpark/Python.  
-- AI_CLASSIFY used for news sentiment labeling and an annotated dataset maintained for live news to improve and validate classifiers.
-
-✅ **Visualization layer**  
-- Streamlit application for interactive dashboards: signal explorer, explainability overlays, backtest results, and model performance monitoring.
+| Feature | Description |
+|---------|-------------|
+| 📊 **Data Ingestion** | Automated collection of stock prices via [Alpha Vantage API](https://www.alphavantage.co/) and financial news via [News API](https://newsapi.org/) |
+| 🔧 **Feature Engineering** | Technical indicators (EMA, RSI, MACD, Volatility) + sentiment features (polarity, subjectivity, entity signals, recency) |
+| 🔍 **Explainability** | SHAP-based model explanations & feature importance for predictions and sentiment analysis |
+| 📈 **Backtesting** | (Under Development) Event-driven engine with PnL, Sharpe ratio, and drawdown analysis |
+| ⚙️ **Orchestration** | Snowflake Tasks & Streams (Airflow-compatible) for end-to-end pipeline automation (ingestion → transform → training → scoring → backtests) |
+| 🤖 **ML Pipeline** | XGBoost + Gradient Regressor with Snowpark; AI_CLASSIFY for sentiment labeling and an annotated dataset maintained for live news to improve and validate classifiers.|
+| 📱 **Interactive Dashboard** | Streamlit app with signal explorer, explainability charts, and performance metrics |
 
 ---
 
@@ -58,19 +58,11 @@ The goal: **generate predictive buy/sell signals** by combining **market price m
 | **Ingestion** | Python, REST APIs | Pulls stock + news data |
 | **Transformation** | Snowflake SQL, Snowpark | Data cleaning and feature creation |
 | **ML** | Python (XGBoost, Pandas), Snowflake Libs | Model training & prediction |
-| **Visualization** | Streamlit | Application & Reporing layer |
+| **Visualization** | Streamlit | Application & Reporting layer |
 
 ---
 
-## 🎬 Submission & Showcase Resources
-
-- Idea Submission PPT (5 Oct 2025): [View PPT](https://docs.google.com/presentation/d/1A272S39itsuTwZJN7cSLmhS9Qb8TdQCz/edit?usp=drive_link&ouid=111214650582844966665&rtpof=true&sd=true)  
-- Demo video submission record (5 Oct 2025): [Watch here](https://docs.google.com/spreadsheets/d/13Ox-XF97oV5iL6ayVca-iZSWQKuh_CHZ2eAQudx7dWA/edit?usp=drive_link)  
-- Pitch deck / PPT (30 Oct 2025): [View PPT](https://docs.google.com/document/d/1c9Qy6GgJpTSRA4xQ8zxRiReXrwkVUUJwiLLs-sSE3p8/edit?usp=drive_link)  
-- Streamlit Dashboard/Application (30 Oct 2025): [View here](https://app.snowflake.com/us-east-1/lac70367/#/streamlit-apps/SIGNAL_EXTRACTION_DB.UTILS.AINREU5NXYDJBG2Y)
-
-
-## 🧩 Architecture
+## 🧩 High Level Data Pipeline (Architecture)
 
 [![Architecture](./docs/Diagrams/Architecture-and-Flow-Diagram.png)](./docs/Diagrams/Architecture-and-Flow-Diagram.png)
 
@@ -79,7 +71,7 @@ The goal: **generate predictive buy/sell signals** by combining **market price m
 <details>
 <summary>🧑‍💼 <b>Use Case Diagram</b> (click to expand)</summary>
 
-[![Use Case Diagram](./docs/media/UseCase-1.png)](./docs/media/UseCase-1.png)
+[![Use Case Diagram](./docs/diagrams/Use-Case-Diagram.png)](./docs/diagrams/Use-Case-Diagram.png)
 </details>
 
 ---
@@ -106,17 +98,55 @@ The goal: **generate predictive buy/sell signals** by combining **market price m
 │   │   ├── streamlit_app.py
 │   │   ├── environment.yml
 │   │   └── market_config.json
-│   └── infra/
-├── 📁 docs/
-├── requirements.txt
-├── README.md
+│   ├── 📁 infra/
+│   ├── 📁 docs/
+│   ├── 📁 env/  # Virtual environment (auto-generated)
+│   └── 📁 utils/
+├── [requirements.txt]
+├── [README.md]
 └── LICENSE
 ```
 </details>
 
 ---
 
+## 📈 Visualization & Outputs 
+<details>
+<summary>📈 <b>Visualizations</b> (click to expand)</summary>
+
+### 📈 Price Prediction Graph
+[![Price Prediction Graph](./docs/demo-screenshots/1_main_graph.png)](./docs/demo-screenshots/1_main_graph.png)
+[![Price Prediction Graph](./docs/demo-screenshots/1_main_graph_with_hover.png)](./docs/demo-screenshots/1_main_graph_with_hover.png)
+
+### 🔍 Price Explainability
+[![Price Explainability](./docs/demo-screenshots/3_price_explainability.png)](./docs/demo-screenshots/3_price_explainability.png)
+
+### 📊 Model Performance Summary
+[![Model Performance Summary](./docs/demo-screenshots/4_model_performance_summary.png)](./docs/demo-screenshots/4_model_performance_summary.png)
+
+### 📰 News Sentiment Ranked
+[![News Sentiment Ranked](./docs/demo-screenshots/5_news_sentiment_ranked.png)](./docs/demo-screenshots/5_news_sentiment_ranked.png)
+
+</details>
+
+---
+
+<details>
+<summary>📊 <b>Underlying Data Outputs</b> (click to expand)</summary>
+
+### 📋 Underlying Chart Data
+[![Underlying Chart Data](./docs/demo-screenshots/6_underlying_chart_data.png)](./docs/demo-screenshots/6_underlying_chart_data.png)
+
+### 📦 Indicators JSON Dump
+[![Indicators JSON Dump](./docs/demo-screenshots/2_indicators_json_dump.png)](./docs/demo-screenshots/2_indicators_json_dump.png)
+
+</details>
+
+---
 ## ⚙️ Setup & Installation
+
+<details>
+<summary>⚙️ <b>Steps</b> (click to expand)</summary>
 
 ### 1️⃣ **Prerequisites**
 - Python 3.9+
@@ -136,16 +166,19 @@ pip install -r requirements.txt
 ```
 
 ### 4️⃣ **Configure Environment**
-Edit `configs/snowflake_config.json`:
+Edit `market_config.json` & `news_config.json`:
 ```json
 {
-  "account": "XXXXXX",
-  "user": "YOUR_USERNAME",
-  "password": "YOUR_PASSWORD",
-  "role": "ACCOUNTADMIN",
-  "warehouse": "COMPUTE_WH",
-  "database": "SIGNAL_EXTRACTION_DB",
-  "schema": "RAW"
+  "...": "...",
+  "snowflake": {
+    "account": "XXXXXX",
+    "user": "YOUR_USERNAME",
+    "password": "YOUR_PASSWORD",
+    "role": "ACCOUNTADMIN",
+    "warehouse": "COMPUTE_WH",
+    "database": "SIGNAL_EXTRACTION_DB",
+    "schema": "<CODE>"
+  }
 }
 ```
 
@@ -167,33 +200,33 @@ python src/3_ml/2_backtest_market_data.ipynb
 python src/4_frontend/streamlit_app.py
 ```
 
----
-
-## Outputs & Visualization
-### 📊 Price Prediction
-[TODO - Add curve photo]
-
-### Sentiment Analysis
-[TODO - add news ranked]
-
-### Explainability Analysis
-[TODO - add explainability outputs]
+</details>
 
 ---
+
+## 🎬 Submission & Showcase Resources
+
+- Streamlit Dashboard/Application (30 Oct 2025): [View Live Application here](https://app.snowflake.com/us-east-1/lac70367/#/streamlit-apps/SIGNAL_EXTRACTION_DB.UTILS.AINREU5NXYDJBG2Y)
+- Pitch deck / PPT (30 Oct 2025): [View PPT](https://docs.google.com/document/d/1c9Qy6GgJpTSRA4xQ8zxRiReXrwkVUUJwiLLs-sSE3p8/edit?usp=drive_link)  
+- Demo video submission record (5 Oct 2025): [Watch here](https://docs.google.com/spreadsheets/d/13Ox-XF97oV5iL6ayVca-iZSWQKuh_CHZ2eAQudx7dWA/edit?usp=drive_link)  
+- Idea Submission PPT (5 Oct 2025): [View PPT](https://docs.google.com/presentation/d/1A272S39itsuTwZJN7cSLmhS9Qb8TdQCz/edit?usp=drive_link&ouid=111214650582844966665&rtpof=true&sd=true)  
 
 ## 🧑‍💻 Author
 
 **Aravind Suresh**  
 Data Engineer @ GE Aerospace | ML & Cloud Enthusiast  
-📍 [LinkedIn](https://www.linkedin.com/in/aravind-suresh8) • [GitHub](https://github.com/aravxdev)
+[<img src="https://img.shields.io/badge/LinkedIn-0A66C2?logo=linkedin&logoColor=white" alt="LinkedIn"/>](https://www.linkedin.com/in/aravind-suresh8) [<img src="https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white" alt="GitHub"/>](https://github.com/aravxdev)
 
 **Abirami Sadasivam**  
 SDE @ VISA | ML & Cloud Enthusiast  
-📍 [LinkedIn](https://linkedin.com/in/abirami-sadasivam) • [GitHub](https://github.com/abixdev)
+[<img src="https://img.shields.io/badge/LinkedIn-0A66C2?logo=linkedin&logoColor=white" alt="LinkedIn"/>](https://linkedin.com/in/abirami-sadasivam) [<img src="https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white" alt="GitHub"/>](https://github.com/abixdev)
 
 **Sidhanth LS**  
 Data Scientist @ Freshworks  
-📍 [LinkedIn](https://linkedin.com/in/sidhantls) • [GitHub](https://github.com/xxx)
+[<img src="https://img.shields.io/badge/LinkedIn-0A66C2?logo=linkedin&logoColor=white" alt="LinkedIn"/>](https://linkedin.com/in/sidhantls) [<img src="https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white" alt="GitHub"/>](https://github.com/sidhantls)
+
+
+> 🤝 Connect with the team on LinkedIn for collaborations!
 
 ---
 
