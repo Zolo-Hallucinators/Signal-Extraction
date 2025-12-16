@@ -13,7 +13,7 @@
 
 ---
 
-[![Signal Extraction ML Pipeline Cover](./docs/diagrams/github_cover_image.png)](./docs/diagrams/github_cover_image.png)
+[![Signal Extraction ML Pipeline Cover](./docs/media/github_cover_image.png)](./docs/media/github_cover_image.png)
 
 ## 📖 Overview
 
@@ -64,14 +64,14 @@ The goal: **generate predictive buy/sell signals** by combining **market price m
 
 ## 🧩 High Level Data Pipeline (Architecture)
 
-[![Architecture](./docs/Diagrams/Architecture-and-Flow-Diagram.png)](./docs/Diagrams/Architecture-and-Flow-Diagram.png)
+[![Architecture](./docs/Diagrams/data_pipeline_flow_diagram.png)](./docs/Diagrams/data_pipeline_flow_diagram.png)
 
 ## 🗂️ Use Case & Repository Structure
 
 <details>
 <summary>🧑‍💼 <b>Use Case Diagram</b> (click to expand)</summary>
 
-[![Use Case Diagram](./docs/diagrams/Use-Case-Diagram.png)](./docs/diagrams/Use-Case-Diagram.png)
+[![Use Case Diagram](./docs/diagrams/use_case_diagram.png)](./docs/diagrams/use_case_diagram.png)
 </details>
 
 ---
