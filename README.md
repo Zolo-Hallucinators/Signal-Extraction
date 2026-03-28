@@ -15,6 +15,7 @@ _A Snowflake-powered end-to-end machine learning pipeline for financial signal g
 ---
 
 [![Signal Extraction ML Pipeline Cover](./docs/media/github_cover_image.png)](./docs/media/github_cover_image.png)
+[![gitcgr](https://gitcgr.com/badge/Zolo-Hallucinators/Signal-Extraction.svg)](https://gitcgr.com/Zolo-Hallucinators/Signal-Extraction)
 
 ## 📖 Overview
 
